@@ -2,6 +2,16 @@ package main
 
 import "fmt"
 
+func countLargestGroup(n int) int {
+	groups := NumberGroupList{}
+
+	for i := 1; i <= n; i++ {
+		groups.Add(i)
+	}
+
+	return len(groups.FilterByBiggerSizes())
+}
+
 type NumberSeparetedByDigits []int
 
 func (nsbd NumberSeparetedByDigits) Sum() (sum int) {
@@ -91,16 +101,6 @@ func (list *NumberGroupList) FilterByBiggerSizes() (filteredList NumberGroupList
 	}
 
 	return filteredList
-}
-
-func countLargestGroup(n int) int {
-	groups := NumberGroupList{}
-
-	for i := 1; i <= n; i++ {
-		groups.Add(i)
-	}
-
-	return len(groups.FilterByBiggerSizes())
 }
 
 func main() {
