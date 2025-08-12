@@ -1,5 +1,0 @@
-# Adapter
-
-## Propósito
-
-## Problema
