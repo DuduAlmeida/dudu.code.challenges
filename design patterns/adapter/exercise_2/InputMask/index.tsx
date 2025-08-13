@@ -1,6 +1,5 @@
 import { forwardRef } from "react";
 import { InputMaskProps } from "./types";
-import { getValidInputProps } from "../../../../../../utils/fields";
 
 import inputMaskAdapter from "./adapters/ReactImask";
 
@@ -9,7 +8,7 @@ const InputWithoutMask = forwardRef<HTMLInputElement, any>((props, ref) => (
   <input {...props} />
 ));
 
-const InputMask = ({ mask, inputRef, isValid, ...props }: InputMaskProps) => {
+const InputMask = ({ mask, ...props }: InputMaskProps) => {
   if (!inputMaskAdapter.isValid(mask)) return <InputWithoutMask {...props} />;
 
   return <inputMaskAdapter.Component mask={mask} {...props} />;
